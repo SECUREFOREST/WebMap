@@ -434,7 +434,6 @@ def index(request, filterservice="", filterportid=""):
 	hostindex = 1
 	ports = { 'open': 0, 'closed': 0, 'filtered': 0 }
 	allostypelist, sscount, picount, cpe = {}, {}, {}, {}
-
 	r['tr'] = {}
 	r['stats'] = {}
 
@@ -446,7 +445,7 @@ def index(request, filterservice="", filterportid=""):
 		else:
 			i = o['host']
 
-		hostname = ''
+		hostname = '1'
 		if 'hostnames' in i and type(i['hostnames']) is dict:
 			# hostname = json.dumps(i['hostnames'])
 			if 'hostname' in i['hostnames']:
