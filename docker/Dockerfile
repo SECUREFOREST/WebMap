@@ -1,8 +1,7 @@
 # WebMap
 # -
-# https://github.com/Rev3rseSecurity/WebMap
-# Rev3rse Security: https://www.youtube.com/rev3rsesecurity
-# Author: theMiddle
+# https://github.com/SECUREFOREST/WebMap
+# Author: SECUREFOREST, (Original version - theMiddle)
 # -
 # Usage:
 #   $ cd /opt
@@ -40,6 +39,7 @@ COPY startup.sh /startup.sh
 
 RUN cd /opt/nmapdashboard && python3 manage.py migrate
 RUN apt-get autoremove -y
+RUN mkdir /root
 RUN ln -s /opt/nmapdashboard/nmapreport/token.py /root/token
 
 EXPOSE 8000

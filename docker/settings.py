@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'rev3rse-notes:_you_should-change_this..._but_webmap_should_run_on_localhost_only..._so_no_problem_here.'
+SECRET_KEY = 'secureforest-notes:_you_should-change_this..._but_webmap_should_run_on_localhost_only..._so_no_problem_here.'
 #             ^^^ -> yes, not safe for production. This is the why you shouldn't expose this app on the internet.
 
 
