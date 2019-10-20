@@ -38,11 +38,14 @@ def nmap_scaninfo(request):
 
 def nmap_newscan(request):
 	if request.method == "POST":
-		if(re.search('^[a-zA-Z0-9\_\-\.]+$', request.POST['filename']) and re.search('^[a-zA-Z0-9\-\.\:\=\s,]+$', request.POST['params']) and re.search('^[a-zA-Z0-9\-\.\:\/\s]+$', request.POST['target'])):
+		if(re.search('^[a-zA-Z0-9\_\-\.]+$', request.POST['filename']) and re.search('^[a-zA-Z0-9\-\.\:\=\s,]+$', request.POST['params'])):
 			res = {'p':request.POST}
-			os.popen('nmap '+request.POST['params']+' --script='+settings.BASE_DIR+'/nmapreport/nmap/nse/ -oX /tmp/'+request.POST['filename']+'.active '+request.POST['target']+' > /dev/null 2>&1 && '+
-			'sleep 10 && mv /tmp/'+request.POST['filename']+'.active /opt/xml/'+request.POST['filename']+' &')
+			with open("/tmp/target.txt", "w") as target_file:
+				target_file.write(request.POST['target'])
 
+			os.popen('nmap '+request.POST['params']+' --script='+settings.BASE_DIR+'/nmapreport/nmap/nse/ -oX /tmp/'+request.POST['filename']+'.active -iL /tmp/target.txt > /dev/null 2>&1 && '+
+			'sleep 10 && mv /tmp/'+request.POST['filename']+'.active /opt/xml/'+request.POST['filename']+' &')
+			
 			if request.POST['schedule'] == "true":
 				schedobj = {'params':request.POST, 'lastrun':time.time(), 'number':0}
 				filenamemd5 = hashlib.md5(str(request.POST['filename']).encode('utf-8')).hexdigest()
