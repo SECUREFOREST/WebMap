@@ -1,6 +1,6 @@
 <p align="center">
 <img width="300" src="https://i.imgur.com/puyIfHT.jpg" /><br>
-A Web Dashbord for Nmap XML Report 
+A Web Dashboard for Nmap XML Report 
 </p>
 
 ## Table Of Contents
