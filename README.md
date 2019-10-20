@@ -48,7 +48,7 @@ $ docker exec -ti webmap /root/token
 
 ### Quick and Dirty
 ```bash
-$ curl -sL http://bit.ly/webmapsetup | bash
+$ curl -sL http://bit.ly/wmsetup | bash
 ```
 
 ### Upgrade from previous release
@@ -60,10 +60,10 @@ $ # remove webmap container
 $ docker rm webmap
 
 $ # pull new image from dockerhub
-$ docker pull rev3rse/webmap
+$ docker pull secureforest/webmap
 
 $ # run WebMap
-$ curl -sL http://bit.ly/webmapsetup | bash
+$ curl -sL http://bit.ly/wmsetup | bash
 ```
 
 ### Run without Docker
