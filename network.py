@@ -42,6 +42,7 @@ def visjs(request):
 
 	addnodes = ''
 	portnodes = {}
+	cnt_nodes = 0
 
 	for ik in o['host']:
 		# this fix single host report
@@ -49,6 +50,10 @@ def visjs(request):
 			i = ik
 		else:
 			i = o['host']
+
+		cnt_nodes += 1
+		if cnt_nodes > 500:
+			break
 
 		hostname = ''
 		if 'hostnames' in i and type(i['hostnames']) is dict:
@@ -112,7 +117,7 @@ def visjs(request):
 
 					v,z,e = '','',''
           
-					if 'service' in p:
+					if 'service' in p and p['service'] is not None:
 						if '@version' in p['service']:
 							portnodes[addressmd5][p['@portid']]['version'] = p['service']['@version']
 						else:

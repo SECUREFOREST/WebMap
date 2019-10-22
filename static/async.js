@@ -27,10 +27,12 @@ $(document).ready(function() {
 	active_scan_timer = setInterval(function() { checkActiveScan(); }, 2000);
 	$('select').formSelect();
 
+/*
 	$.get('https://api.github.com/repos/Rev3rseSecurity/WebMap').done(function(d) {
 		$('#githubstar').html(d['stargazers_count']+' stars');
 		$('#githubfork').html(d['forks']+' forks');
 	});
+*/
 
 	var wminterval = setInterval(function() {
 		if(!wmover) {
