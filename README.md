@@ -1,5 +1,5 @@
 <p align="center">
-## A Web Dashboard for Nmap XML Report 
+<h1>A Web Dashboard for Nmap XML Report</h1>
 </p>
 
 ## Table Of Contents
