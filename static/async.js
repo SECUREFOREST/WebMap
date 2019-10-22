@@ -28,7 +28,7 @@ $(document).ready(function() {
 	$('select').formSelect();
 
 /*
-	$.get('https://api.github.com/repos/Rev3rseSecurity/WebMap').done(function(d) {
+	$.get('https://api.github.com/repos/secureforest/WebMap').done(function(d) {
 		$('#githubstar').html(d['stargazers_count']+' stars');
 		$('#githubfork').html(d['forks']+' forks');
 	});
