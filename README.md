@@ -1,7 +1,9 @@
 <p align="center">
 A Web Dashboard for Nmap XML Report
 </p>
+
 Current Version: 2.3a
+
 ## Table Of Contents
 - [Usage](#usage)
 - [Features](#features)
