@@ -149,7 +149,7 @@ def details(request, address):
 
 				pel = (pel + 1)
 				oshtml = ''
-				if 'service' in p:
+				if 'service' in p and p['service'] is not None:
 					if '@ostype' in p['service']:
 						oshtml = '<div style="font-family:monospace;padding:6px;margin:6px;border-left:solid #666 1px;"><sup style="border-bottom:solid #ccc 1px;">Operating System</sup><br>'+html.escape(p['service']['@ostype'])+'</div>'
 
@@ -166,7 +166,7 @@ def details(request, address):
 
 				v,z,e = '','','<i class="grey-text">N/A</i>'
 				if p['state']['@state'] == 'open':
-					if 'service' in p:
+					if 'service' in p and p['service'] is not None:
 						if '@version' in p['service']:
 							v = p['service']['@version']
 						else:
@@ -219,7 +219,7 @@ def details(request, address):
 					'<button onclick="javascript:apiPortDetails(\''+html.escape(address)+'\',\''+html.escape(p['@portid'])+'\');" class="btn blue right"><i class="material-icons">receipt</i></button></td>'+\
 					'</tr>'
 				elif p['state']['@state'] == 'filtered':
-					if 'service' in p:
+					if 'service' in p and p['service'] is not None:
 						servicename = p['service']['@name']
 					else:
 						servicename = ''
@@ -237,7 +237,7 @@ def details(request, address):
 					'<td colspan="2" style="color:#999;font-size:12px;">State: filtered<br>Reason: '+p['state']['@reason']+'</td>'+\
 					'<td><button onclick="javascript:apiPortDetails(\''+html.escape(address)+'\',\''+html.escape(p['@portid'])+'\');" class="btn blue right"><i class="material-icons">receipt</i></button></td></tr>'
 				else:
-					if 'service' in p:
+					if 'service' in p and p['service'] is not None:
 						servicename = p['service']['@name']
 					else:
 						servicename = ''
@@ -512,7 +512,7 @@ def index(request, filterservice="", filterportid=""):
 				else:
 					lastportid = p['@portid']
 
-				if 'service' in p:
+				if 'service' in p and p['service'] is not None:
 					if filterservice != "" and p['service']['@name'] == filterservice:
 						striggered = True
 
