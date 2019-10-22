@@ -397,6 +397,19 @@ def index(request, filterservice="", filterportid=""):
 				'portstats':portstats
 			}
 
+		for i in xmlfiles:
+			if re.search('\.jsonl$', i) is None:
+				continue
+
+			#portstats = {}
+			xmlfilescount = (xmlfilescount + 1)
+
+			try:
+				oo = json.loads(open('/opt/xml/'+i, 'r').read())
+			except:
+				r['tr'][i] = {'filename':html.escape(i), 'start': 0, 'startstr': 'Incomplete / Invalid*', 'hostnum':0, 'href':'#!', 'portstats':{'po':0,'pc':0,'pf':0}}
+				continue
+
 		r['tr'] = OrderedDict(sorted(r['tr'].items()))
 		r['stats']['xmlcount'] = xmlfilescount
 
