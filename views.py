@@ -507,7 +507,7 @@ def index(request, filterservice="", filterportid=""):
 						striggered = True
 
 				pp[p['@portid']] = p['@portid']
-#check if not none fix tabs
+				#check if not none fix tabs
 				if 'service' in p and p['service'] is not None:
 					if '@name' in p['service']:
 						ss[p['service']['@name']] = p['service']['@name']
