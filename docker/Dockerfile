@@ -1,11 +1,11 @@
 # WebMap
 # -
 # https://github.com/SECUREFOREST/WebMap
-# Author: SECUREFOREST, (Original version - theMiddle)
+# Author: SECUREFOREST, Original version - theMiddle
 # -
 # Usage:
 #   $ cd /opt
-#   $ git clone https://github.com/Rev3rseSecurity/WebMap.git
+#   $ git clone https://github.com/SECUREFOREST/WebMap.git
 #   $ cd WebMap/docker
 #   $ docker build -t webmap:latest .
 #   $ docker run -d -v /opt/WebMap/docker/xml:/opt/xml -p 8000:8000 webmap:latest
