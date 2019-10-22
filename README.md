@@ -1,7 +1,7 @@
 <p align="center">
 A Web Dashboard for Nmap XML Report
 </p>
-
+Current Version: 2.3a
 ## Table Of Contents
 - [Usage](#usage)
 - [Features](#features)
@@ -73,11 +73,14 @@ but if you need it you can find all building steps inside the [Dockerfile](https
 
 ## Roadmap for v2.4x
 You love WebMap and you know python? We need your help! This is what we want deploy for the v2.4:
-- [In progress] Improve template: try to define better the html template and charts
-- [In progress] Various bug fixes
+
 - [todo] Improve API: create a documentation/wiki about it
 - [todo] Wiki: create WebMap User Guide on GitHub
 - [todo] Zaproxy: Perform web scan using the OWASP ZAP API
+
+## Changes on v2.3a
+- [In progress] Improve template: try to define better the html template and charts
+- [In progress] Various bug fixes
 
 ## Changes on v2.3
 - Scan diff: show difference between two scheduled nmap scan report
