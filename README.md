@@ -5,22 +5,15 @@ A Web Dashboard for Nmap XML Report
 ## Table Of Contents
 - [Usage](#usage)
 - [Features](#features)
-- [PDF Report](#pdf-report)
+- [PDF Report]
 - [XML Filenames](#xml-filenames)
 - [CVE and Exploits](#cve-and-exploits)
-- [Network View](#network-view)
+- [Network View]
 - [RESTful API](#restful-api)
 - [Third Parts](#third-parts)
 - [Security Issues](#security-issues)
 - [Contributors](#contributors)
 - [Contacts](#contacts)
-
-
-## Screenshot
-<img src="https://i.imgur.com/ELZfqd0.png" /><br>
-<img src="https://i.imgur.com/KsBv1S0.png" /><br>
-<img src="https://i.imgur.com/g27mcc3.png" /><br>
-<br>
 
 ## Usage
 You should use this with docker, just by sending this command:
@@ -104,9 +97,6 @@ You love WebMap and you know python? We need your help! This is what we want dep
 - Add new Network View
 - Add RESTful API
 
-## PDF Report
-![WebMap](https://i.imgur.com/alWZix9.png)
-
 ## XML Filenames
 When creating the PDF version of the Nmap XML Report, the XML filename is used as document title on the first page. 
 WebMap will replace some parts of the filename as following:
@@ -121,9 +111,6 @@ PDF title: `ACME Ltd.`
 thanks to the amazing API services by circl.lu, WebMap is able to looking for CVE and Exploits for each CPE collected by Nmap. 
 Not all CPE are checked over the circl.lu API, but only when a specific version is specified 
 (for example: `cpe:/a:microsoft:iis:7.5` and not `cpe:/o:microsoft:windows`).
-
-## Network View
-![WebMap](https://i.imgur.com/j77jQz9.png)
 
 ## RESTful API
 From `v2.1` WebMap has a RESTful API frontend that makes users able to query their scan files with something like:
