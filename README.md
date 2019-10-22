@@ -1,28 +1,19 @@
 <p align="center">
-<img width="300" src="https://i.imgur.com/puyIfHT.jpg" /><br>
-A Web Dashboard for Nmap XML Report 
+A Web Dashboard for Nmap XML Report
 </p>
+
+Current Version: 2.3a
 
 ## Table Of Contents
 - [Usage](#usage)
-- [Video](#video)
 - [Features](#features)
-- [PDF Report](#pdf-report)
 - [XML Filenames](#xml-filenames)
 - [CVE and Exploits](#cve-and-exploits)
-- [Network View](#network-view)
 - [RESTful API](#restful-api)
 - [Third Parts](#third-parts)
 - [Security Issues](#security-issues)
 - [Contributors](#contributors)
 - [Contacts](#contacts)
-
-
-## Screenshot
-<img src="https://i.imgur.com/ELZfqd0.png" /><br>
-<img src="https://i.imgur.com/KsBv1S0.png" /><br>
-<img src="https://i.imgur.com/g27mcc3.png" /><br>
-<br>
 
 ## Usage
 You should use this with docker, just by sending this command:
@@ -84,11 +75,14 @@ but if you need it you can find all building steps inside the [Dockerfile](https
 
 ## Roadmap for v2.4x
 You love WebMap and you know python? We need your help! This is what we want deploy for the v2.4:
-- [In progress] Improve template: try to define better the html template and charts
-- [In progress] Various bug fixes
+
 - [todo] Improve API: create a documentation/wiki about it
 - [todo] Wiki: create WebMap User Guide on GitHub
 - [todo] Zaproxy: Perform web scan using the OWASP ZAP API
+
+## Changes on v2.3a
+- [In progress] Improve template: try to define better the html template and charts
+- [In progress] Various bug fixes
 
 ## Changes on v2.3
 - Scan diff: show difference between two scheduled nmap scan report
@@ -106,9 +100,6 @@ You love WebMap and you know python? We need your help! This is what we want dep
 - Add new Network View
 - Add RESTful API
 
-## PDF Report
-![WebMap](https://i.imgur.com/alWZix9.png)
-
 ## XML Filenames
 When creating the PDF version of the Nmap XML Report, the XML filename is used as document title on the first page. 
 WebMap will replace some parts of the filename as following:
@@ -123,9 +114,6 @@ PDF title: `ACME Ltd.`
 thanks to the amazing API services by circl.lu, WebMap is able to looking for CVE and Exploits for each CPE collected by Nmap. 
 Not all CPE are checked over the circl.lu API, but only when a specific version is specified 
 (for example: `cpe:/a:microsoft:iis:7.5` and not `cpe:/o:microsoft:windows`).
-
-## Network View
-![WebMap](https://i.imgur.com/j77jQz9.png)
 
 ## RESTful API
 From `v2.1` WebMap has a RESTful API frontend that makes users able to query their scan files with something like:
