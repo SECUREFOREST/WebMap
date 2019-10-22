@@ -334,7 +334,7 @@ def index(request, filterservice="", filterportid=""):
 		r['auth'] = True
 
 	gitcmd = os.popen('cd /opt/nmapdashboard/nmapreport && git rev-parse --abbrev-ref HEAD')
-	r['webmapver'] = 'WebMap '+gitcmd.read()+'<br>This project is currently a beta, please <b>DO NOT</b> expose WebMap to internet.<br>This version is <b>NOT</b> production ready.'
+	r['webmapver'] = 'WebMap '+gitcmd.read()+'<br>This project is for internal use only, <b>DO NOT</b> expose WebMap to internet.'
 
 	if 'scanfile' in request.session:
 		oo = xmltodict.parse(open('/opt/xml/'+request.session['scanfile'], 'r').read())
