@@ -507,9 +507,10 @@ def index(request, filterservice="", filterportid=""):
 						striggered = True
 
 				pp[p['@portid']] = p['@portid']
-
-				if 'service' in p:
-					ss[p['service']['@name']] = p['service']['@name']
+#check if not none
+				 if 'service' in p and p['service'] is not None:
+                    if '@name' in p['service']:
+                        ss[p['service']['@name']] = p['service']['@name']
 
 					if '@extrainfo' in p['service']:
 						e = p['service']['@extrainfo']
