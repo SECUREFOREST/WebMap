@@ -39,7 +39,6 @@ COPY startup.sh /startup.sh
 
 RUN cd /opt/nmapdashboard && python3 manage.py migrate
 RUN apt-get autoremove -y
-#RUN mkdir /root
 RUN ln -s /opt/nmapdashboard/nmapreport/token.py /root/token
 RUN chmod +x /root/token
 
