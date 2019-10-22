@@ -68,7 +68,7 @@ $ curl -sL http://bit.ly/wmsetup | bash
 
 ### Run without Docker
 This project is designed to run on a Docker container. IMHO it isn't a good idea to run this on a custom Django installation, 
-but if you need it you can find all building steps inside the [Dockerfile](https://github.com/Rev3rseSecurity/WebMap/blob/v2.1/master/docker/Dockerfile).
+but if you need it you can find all building steps inside the [Dockerfile](https://raw.githubusercontent.com/SECUREFOREST/WebMap/master/docker/Dockerfile).
 
 ## Features
 - Import and parse Nmap XML files
@@ -82,15 +82,17 @@ but if you need it you can find all building steps inside the [Dockerfile](https
 - Search for CVE and Exploits based on CPE collected by Nmap
 - RESTful API
 
-## Roadmap for v2.3x
-You love WebMap and you know python? We need your help! This is what we want deploy for the v2.3:
-- [todo] Improve template: try to define better the html template and charts
+## Roadmap for v2.4x
+You love WebMap and you know python? We need your help! This is what we want deploy for the v2.4:
+- [In progress] Improve template: try to define better the html template and charts
+- [In progress] Various bug fixes
 - [todo] Improve API: create a documentation/wiki about it
 - [todo] Wiki: create WebMap User Guide on GitHub
-- [working] Authentication or something that could blocks access to WebMap if != localhost
-- [working] Scan diff: show difference between two scheduled nmap scan report
 - [todo] Zaproxy: Perform web scan using the OWASP ZAP API
 
+## Changes on v2.3
+- Scan diff: show difference between two scheduled nmap scan report
+- Authentication or something that could blocks access to WebMap if != localhost
 ## Changes on v2.2
 - fixed bug on missing services
 - Run nmap from WebMap
@@ -131,7 +133,7 @@ From `v2.1` WebMap has a RESTful API frontend that makes users able to query the
 ```bash
 curl -s 'http://localhost:8000/api/v1/scan?token=<token>'
 
-    "webmap_version": "v2.1/master",
+    "webmap_version": "v2.3/master",
     "scans": {
         "scanme.nmap.org.xml": {
             "filename": "scanme.nmap.org.xml",
