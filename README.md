@@ -5,10 +5,8 @@ A Web Dashboard for Nmap XML Report
 ## Table Of Contents
 - [Usage](#usage)
 - [Features](#features)
-- [PDF Report]
 - [XML Filenames](#xml-filenames)
 - [CVE and Exploits](#cve-and-exploits)
-- [Network View]
 - [RESTful API](#restful-api)
 - [Third Parts](#third-parts)
 - [Security Issues](#security-issues)
