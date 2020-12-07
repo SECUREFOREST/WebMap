@@ -1,3 +1,4 @@
 requests
 xmltodict
 python-nmap
+Django
