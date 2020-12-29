@@ -2,7 +2,7 @@
 A Web Dashboard for Nmap XML Report
 </p>
 
-Current Version: 2.3a
+Current version: 2.3a
 
 ## Table Of Contents
 - [Usage](#usage)
