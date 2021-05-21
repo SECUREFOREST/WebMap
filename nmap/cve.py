@@ -77,7 +77,7 @@ def getcve(xmlfile):
 		for cpestr in cpecve['cpe'][i]:
 			print(cpestr)
 			if re.search('^cpe:[^:]+:[^:]+:[^:]+:.+$', cpestr):
-				r = requests.get('http://cve.circl.lu/api/cvefor/'+cpestr)
+				r = requests.get('http://cve.circl.lu/api/#cvefor/'+cpestr)
 				if r.json() is not None:
 					if r.json() is dict:
 						cvejson[i].append(r.json())
@@ -92,7 +92,7 @@ def getcve(xmlfile):
 
 		for cvestr in cpecve['cve'][i]:
 			print(cvestr)
-			r = requests.get('http://cve.circl.lu/api/cve/'+cvestr)
+			r = requests.get('http://cve.circl.lu/api/#cve/'+cvestr)
 			if r.json() is not None:
 				if r.json() is dict:
 					cvejson[i].append(r.json())
