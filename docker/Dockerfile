@@ -22,8 +22,7 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages \
-    python3 python3-pip curl wget git wkhtmltopdf libssl1.1 vim nmap tzdata
-
+    python3 python3-pip curl wget git wkhtmltopdf libssl1.0-dev vim nmap tzdata
 
 RUN mkdir /opt/xml && mkdir /opt/notes && \
     wget -P /opt/ https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz && \
@@ -31,13 +30,14 @@ RUN mkdir /opt/xml && mkdir /opt/notes && \
 
 RUN pip3 install Django requests xmltodict && \
     cd /opt/ && django-admin startproject nmapdashboard && cd /opt/nmapdashboard && \
-    git clone https://github.com/SECUREFOREST/WebMap.git nmapreport 
+    git clone https://github.com/infinition/WebMap-1.git nmapreport && \
+    cd nmapreport && git checkout master
+    
 
-COPY settings.py /opt/nmapdashboard/nmapdashboard/
-COPY urls.py /opt/nmapdashboard/nmapdashboard/
-# COPY vimrc /root/.vimrc
-COPY tzdata.sh /root/tzdata.sh
-COPY startup.sh /startup.sh
+RUN cp /opt/nmapdashboard/nmapreport/docker/settings.py /opt/nmapdashboard/nmapdashboard/
+RUN cp /opt/nmapdashboard/nmapreport/docker/urls.py /opt/nmapdashboard/nmapdashboard/
+RUN cp /opt/nmapdashboard/nmapreport/docker/tzdata.sh /root/tzdata.sh
+RUN cp /opt/nmapdashboard/nmapreport/docker/startup.sh /startup.sh
 
 RUN cd /opt/nmapdashboard && python3 manage.py migrate
 RUN apt-get autoremove -y
