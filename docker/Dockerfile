@@ -22,7 +22,7 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages \
-    python3 python3-pip curl wget git wkhtmltopdf libssl-dev vim nmap tzdata
+    python3 python3-pip curl wget git wkhtmltopdf libssl1.1 vim nmap tzdata
 
 
 RUN mkdir /opt/xml && mkdir /opt/notes && \
