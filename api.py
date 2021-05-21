@@ -143,7 +143,7 @@ def getCVE(request):
 		cpe = json.loads(base64.b64decode(urllib.parse.unquote(request.POST['cpe'])).decode('ascii'))
 
 		for cpestr in cpe:
-			r = requests.get('http://cve.circl.lu/api/cvefor/'+cpestr)
+			r = requests.get('http://cve.circl.lu/api/#cvefor/'+cpestr)
 			cvejson = r.json()
 
 			for host in cpe[cpestr]:
@@ -156,7 +156,7 @@ def getCVE(request):
 
 		return HttpResponse(json.dumps(res), content_type="application/json")
 
-		r = requests.get('http://cve.circl.lu/api/cvefor/'+request.POST['cpe'])
+		r = requests.get('http://cve.circl.lu/api/#cvefor/'+request.POST['cpe'])
 
 		if request.POST['host'] not in res:
 			res[request.POST['host']] = {}
